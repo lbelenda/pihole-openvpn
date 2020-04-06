@@ -1,7 +1,8 @@
 $docker volume create --name ovpn-data
-# server ip=52.66.18.251
+
+server ip=52.66.18.251
 $docker run -v ovpn-data:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://52.66.18.251
-# Certificate Generation take 2-5 minutes.
+Certificate Generation take 2-5 minutes.
 $docker run -v ovpn-data:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
 
 Openvpn running in port 1194
@@ -23,7 +24,8 @@ $export TERM=xterm
 $apk update 
 $apk add nano 
 $nano /etc/openvpn/openvpn.conf
-### Push Configurations Below
+
+Push Configurations Below
 push block-outside-dns
 push dhcp-option DNS 172.17.0.3
 #push dhcp-option DNS 8.8.4.4
