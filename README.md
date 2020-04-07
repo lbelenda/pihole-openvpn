@@ -1,11 +1,12 @@
 1. Install OpenVPN
 
-`$docker volume create --name ovpn-data
 
-#server ip=52.66.18.251
+`$docker volume create --name ovpn-data
+server ip=52.66.18.251
 $docker run -v ovpn-data:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://52.66.18.251
 Certificate Generation take 2-5 minutes.
 $docker run -v ovpn-data:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki`
+
 
 Openvpn running in port 1194
 
